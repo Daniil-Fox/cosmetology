@@ -1,0 +1,34 @@
+.footer {
+  padding: 60px 0;
+  background-color: var(--text-color);
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__left {
+    display: flex;
+    align-items: center;
+    gap: 38px;
+  }
+
+  &__copy {
+    font-weight: 300;
+    font-size: 15px;
+    color: #fff;
+  }
+
+  &__tel {
+    font-family: var(--second-family);
+    font-weight: 400;
+    font-size: 28px;
+    text-align: right;
+    color: #fff;
+
+    @include hover {
+      text-decoration: underline;
+    }
+  }
+}
