@@ -1,0 +1,22 @@
+// базовые подключения
+@import "vars";
+@import "mixins";
+@import "fonts";
+@import "settings";
+
+@import "./components/header";
+@import "./components/nav";
+@import "./components/hero";
+@import "./components/adv";
+@import "./components/method";
+@import "./components/lifting";
+@import "./components/compare";
+@import "./components/quiz";
+@import "./components/mech";
+@import "./components/app";
+@import "./components/cases";
+@import "./components/reward";
+@import "./components/price";
+@import "./components/faq";
+@import "./components/contacts";
+@import "./components/modal";

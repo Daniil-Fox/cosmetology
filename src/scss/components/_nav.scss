@@ -1,0 +1,34 @@
+.nav {
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+
+  &__item {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 1.2px;
+      width: 0;
+      background-color: var(--text-color);
+      transition: width .3s ease-out;
+    }
+
+    @include hover {
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+
+  &__link {
+    font-weight: 400;
+    font-size: 15px;
+    color: var(--text-color);
+  }
+}

@@ -1,0 +1,32 @@
+.method {
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 30px;
+  }
+
+  &__img {
+    grid-column: 4 span;
+
+    img {
+      height: 100%;
+    }
+  }
+
+  &__content {
+    grid-column: 8 span;
+    padding-top: 55px;
+    padding-left: 44px;
+    padding-bottom: 20px;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__desc {
+    &:not(:last-child) {
+      margin-bottom: 25px;
+    }
+  }
+}

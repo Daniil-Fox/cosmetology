@@ -1,0 +1,147 @@
+.price {
+  background-color: #f1e7dc;
+  padding-top: 87px;
+  padding-bottom: 110px;
+
+  &__title {
+    margin-bottom: 40px;
+  }
+}
+
+.price-list {
+  margin-bottom: 32px;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    cursor: pointer;
+
+
+  }
+
+  &__desc {
+    margin: 0;
+    font-weight: 300;
+    font-size: 14px;
+    color: var(--text-color);
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 32px;
+    }
+
+    &.active {
+      .price-list__btn {
+        transform: rotate(0);
+        background-color: var(--accent-color);
+
+        svg {
+          fill: var(--white-color);
+        }
+      }
+    }
+  }
+
+  &__btn {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    background-color: var(--white-color);
+    transform: rotate(-90deg);
+    transition: transform .2s ease-in-out, background-color .2s ease-in-out;
+
+    svg {
+      width: 13px;
+      height: 12px;
+      object-fit: contain;
+
+      fill: var(--accent-color);
+
+      transition: fill .2s ease-in-out;
+    }
+  }
+
+  &__name {
+    font-weight: 400;
+    font-size: 20px;
+    color: var(--text-color);
+  }
+
+  &__content {
+    box-sizing: content-box;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .3s ease-out;
+    will-change: max-height;
+    padding-left: 60px;
+
+    &,
+    tbody {
+      display: block;
+      width: 100%;
+    }
+
+    td {
+      font-weight: 300;
+      font-size: 17px;
+      color: var(--text-color);
+
+      .bold {
+        font-weight: 600;
+      }
+
+      .acc {
+        display: block;
+        position: relative;
+        font-weight: 600;
+        font-size: 16px;
+        color: var(--accent-color);
+        padding-right: 36px;
+
+        &::after {
+          content: "";
+          position: absolute;
+          opacity: 0;
+          right: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 26px;
+          height: 26px;
+          background-image: url('./../img/arrow-circle-acc.svg');
+          background-position: center center;
+          background-size: contain;
+          background-repeat: no-repeat;
+
+          transition: opacity .2s ease-out;
+        }
+      }
+    }
+
+    tr {
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      padding: 20px 0;
+
+      &:not(:last-child) {
+        border-bottom: 1px solid #dddad7;
+      }
+
+      @include hover {
+        .acc {
+          &::after {
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+
+  }
+}

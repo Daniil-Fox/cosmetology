@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+@include('partials/head.html')
+
+<body class="page__body">
+  <div class="site-container">
+    @include('partials/header.html')
+    <main class="main">
+      @include('partials/hero.html')
+      @include('partials/adv.html')
+      @include('partials/method.html')
+      @include('partials/lifting.html')
+      @include('partials/compare.html')
+      @include('partials/quiz.html')
+      @include('partials/mech.html')
+      @include('partials/app.html')
+      @include('partials/cases.html')
+      @include('partials/reward.html')
+      @include('partials/price.html')
+      @include('partials/faq.html')
+      @include('partials/contacts.html')
+      @include('partials/modal.html')
+    </main>
+    @include('partials/footer.html')
+  </div>
+  <script>
+
+    initMap();
+
+    async function initMap() {
+      await ymaps3.ready;
+
+      const { YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer } = ymaps3;
+      const { YMapDefaultMarker } = await ymaps3.import('@yandex/ymaps3-markers@0.0.1');
+      const map = new YMap(
+        document.getElementById('map'),
+        {
+          location: {
+            center: [49.600487, 54.209739],
+            zoom: 15
+          }
+        },
+        [
+          new YMapDefaultSchemeLayer({}),
+          new YMapDefaultFeaturesLayer({})
+        ]
+      );
+      const marker = new YMapDefaultMarker({
+        coordinates: [49.600487, 54.209739],
+        color: '#FF2400'
+      });
+      map.addChild(marker);
+    };
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+.hero {
+  padding-top: 196px;
+  padding-bottom: 166px;
+  background-color: #f1e7dc;
+  border-bottom-left-radius: 300px;
+
+  &__container {
+    position: relative;
+  }
+
+  &__girl {
+    position: absolute;
+    right: 0;
+    bottom: -83px;
+    height: 646px;
+
+    img {
+      height: 100%;
+    }
+  }
+
+  &__content {
+    max-width: 650px;
+  }
+
+  &__subtitle {
+    display: inline-block;
+    margin: 0;
+    margin-bottom: 34px;
+    border-radius: 25px 32px 32px 0;
+    padding: 10px 32px;
+    background-color: var(--red-color);
+    font-family: var(--font-family);
+    font-weight: 300;
+    font-size: 24px;
+    color: #fff;
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 62px;
+    font-family: var(--second-family);
+    font-weight: 400;
+    font-size: 66px;
+    color: var(--text-color);
+  }
+
+  &__desc {
+    margin: 0;
+    margin-bottom: 20px;
+    font-family: var(--font3);
+    font-weight: 700;
+    font-size: 32px;
+    color: var(--text-color);
+  }
+
+  &__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 42px;
+
+    img {
+      display: block;
+      width: 26px;
+      height: 26px;
+    }
+  }
+}

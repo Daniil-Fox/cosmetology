@@ -1,0 +1,124 @@
+.quiz {
+  position: relative;
+  padding-top: 130px;
+  padding-bottom: 130px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 73%;
+    width: 28%;
+    background-color: #0d2dd2;
+    border-top-left-radius: 300px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    right: 270px;
+    bottom: 85px;
+    width: 348px;
+    height: 300px;
+    background-image: url('./../img/dotted.svg');
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__desc {
+    margin: 0;
+    margin-bottom: 65px;
+    max-width: 510px;
+    font-family: var(--font-family);
+    font-weight: 300;
+    font-size: 18px;
+    color: var(--text-color);
+  }
+
+  &__bg {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    height: 100%;
+    width: 88%;
+    background-color: #f1e7dc;
+    border-top-right-radius: 300px;
+  }
+
+  &__que {
+    margin: 0;
+    margin-bottom: 20px;
+    font-family: var(--second-family);
+    font-weight: 400;
+    font-size: 36px;
+    color: var(--text-color);
+  }
+
+  &__vars {
+    display: flex;
+    gap: 19px;
+  }
+
+  &__radio {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+
+    &:checked {
+      &+.quiz__label {
+        background-color: #154b8b;
+        color: var(--white-color);
+      }
+    }
+  }
+
+  &__label {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+    font-size: 16px;
+    text-align: center;
+    color: #154b8b;
+    flex: 1;
+    max-width: 186px;
+    height: 107px;
+    background-color: var(--white-color);
+
+    transition: background-color .3s ease-out, color .3s ease-out;
+  }
+
+  &__slider {
+    .swiper-pagination {
+      position: relative;
+      bottom: unset;
+      left: unset;
+      right: unset;
+      top: unset;
+      justify-content: flex-start;
+      text-align: left;
+      padding: 12px 0;
+      margin-bottom: 12px;
+
+      &-bullet {
+        width: 9px;
+        height: 9px;
+        background-color: #c39683;
+        margin: 0 12px !important;
+
+        &-active {
+          outline: 1px solid #c39683;
+          outline-offset: 7px;
+        }
+      }
+    }
+  }
+}

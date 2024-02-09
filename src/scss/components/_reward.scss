@@ -1,0 +1,57 @@
+.reward {
+  position: relative;
+  padding: 110px 0;
+  padding-bottom: 150px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: 238px;
+    bottom: 70px;
+    width: 338px;
+    height: 300px;
+    background-image: url('./../img/dotted-blue.svg');
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  &__bg {
+    position: absolute;
+    z-index: -1;
+    right: 0;
+    top: 0;
+    border-top-left-radius: 150px;
+    width: 32%;
+    height: 100%;
+    background-color: #f1f3fe;
+  }
+
+  &__container {
+    position: relative;
+    z-index: 3;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+  }
+
+  &__content {}
+
+  &__title {
+    margin-bottom: 15px;
+  }
+
+  &__desc {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__image {
+    height: 377px;
+
+    img {
+      height: 100%;
+    }
+  }
+}
