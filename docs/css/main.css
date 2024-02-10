@@ -1925,6 +1925,9 @@ a {
 }
 .cases-item__video {
   position: relative;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
 }
 @media (max-width: 768px) {
   .cases-item__video {
@@ -1933,6 +1936,11 @@ a {
 }
 .cases-item__video video {
   width: 100%;
+}
+.cases-item__content {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
 }
 .cases-item__title {
   margin: 0;

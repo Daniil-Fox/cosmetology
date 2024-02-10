@@ -16634,6 +16634,16 @@ burger.addEventListener('click', e => {
   header.classList.toggle('active');
   isActive ? document.body.style.overflow = 'hidden' : document.body.style.overflow = null;
 });
+const playBtns = document.querySelectorAll('[data-video-play]');
+playBtns.forEach(el => {
+  const videoWrapper = el.closest('[data-video-wrap]');
+  const video = videoWrapper.querySelector('[data-video]');
+  el.addEventListener('click', e => {
+    el.style.display = 'none';
+    video.setAttribute('controls', null);
+    video.play();
+  });
+});
 })();
 
 /******/ })()
