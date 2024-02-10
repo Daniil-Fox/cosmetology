@@ -71,6 +71,10 @@
   }
 
   &__slider {
+    @include mobile {
+      padding: 0 20px;
+    }
+
     .swiper-slide {
       width: auto;
     }
