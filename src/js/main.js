@@ -6,9 +6,9 @@ import './_components';
 
 const modalBtns = document.querySelectorAll('[data-modal-btn]')
 
-const modal = document.querySelector('.modal')
-const modalWindow = document.querySelector('.modal__window')
-const closeBtn = document.querySelector('.modal__close')
+const modal = document.querySelector('[data-modal]')
+const modalWindow = modal.querySelector('.modal__window')
+const closeBtn = modal.querySelector('.modal__close')
 modalBtns.forEach(el => {
   el.addEventListener('click', e => {
     e.preventDefault()
@@ -33,3 +33,5 @@ modal.addEventListener('click', e => {
 modalWindow.addEventListener('click', e => {
   e.stopPropagation()
 })
+
+

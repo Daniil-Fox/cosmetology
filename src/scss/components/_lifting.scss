@@ -4,16 +4,40 @@
   background-color: #f1f3fe;
   border-top-left-radius: 300px;
 
+  @include tablet {
+    border-top-left-radius: 150px;
+  }
+
+  @include small-tablet {
+    padding: 60px 0;
+    border-top-left-radius: 0;
+  }
+
   &__container {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    // align-items: flex-start;
     gap: 30px;
+
+    @include small-tablet {
+      grid-template-columns: 1fr;
+      gap: 38px;
+    }
+  }
+
+  &__btn {
+    @include mobile {
+      justify-content: flex-start;
+    }
   }
 
   &__text {
-    // position: relative;
+    position: relative;
+    z-index: 3;
     grid-column: 5 span;
+
+    @include small-tablet {
+      grid-column: 1;
+    }
   }
 
   &__content {
@@ -23,10 +47,18 @@
 
   &__items {
     grid-column: 6 / 7 span;
+
+    @include small-tablet {
+      grid-column: 1;
+    }
   }
 
   &__title {
     margin-bottom: 40px;
+
+    @include small-tablet {
+      margin-bottom: 32px;
+    }
   }
 }
 
@@ -36,8 +68,20 @@
   justify-content: space-between;
   margin-bottom: 12px;
 
+  @include small-tablet {
+    margin-bottom: 25px;
+  }
+
+  @include small-tablet {
+    justify-content: unset;
+  }
+
   &:last-child {
     margin-bottom: 35px;
+
+    @include small-tablet {
+      margin-bottom: 30px;
+    }
   }
 
   &__fig {
@@ -46,6 +90,10 @@
     font-weight: 400;
     font-size: 80px;
     color: #c39683;
+
+    @include tablet {
+      font-size: 60px;
+    }
   }
 
   &__sep {
@@ -56,6 +104,15 @@
     width: 20px;
     margin: 0 14px;
     position: relative;
+
+    @include tablet {
+      height: 48px;
+      margin: 0 8px;
+    }
+
+    @include small-tablet {
+      flex-grow: 0;
+    }
 
     &::after {
       content: "";
@@ -76,6 +133,10 @@
     line-height: 136%;
     color: #212121;
     align-self: center;
+
+    @include tablet {
+      font-size: 16px;
+    }
   }
 }
 
@@ -86,6 +147,15 @@
   gap: 30px;
   border: 2px solid #cfd4f2;
   position: relative;
+
+  @include tablet {
+    padding-right: 10px;
+  }
+
+  @include mobile {
+    flex-direction: column;
+    gap: 19px;
+  }
 
   &__dot {
     position: absolute;
@@ -129,20 +199,52 @@
     height: 124px;
     border-radius: 100%;
     overflow: hidden;
+    flex-shrink: 0;
+
+    @include tablet {
+      width: 90px;
+      height: 90px;
+    }
+
+    @include mobile {
+      width: 80px;
+      height: 80px;
+    }
 
     img {
       width: 100%;
       height: 100%;
     }
+
+    &-wrap {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
   }
 
   &__title {
+    position: relative;
+    z-index: 4;
     margin: 0;
     margin-bottom: 5px;
     font-family: var(--second-family);
     font-weight: 400;
     font-size: 42px;
     color: var(--text-color);
+
+    @include mobile {
+      display: none;
+      font-size: 32px;
+    }
+
+    &--mob {
+      display: none;
+
+      @include mobile {
+        display: block;
+      }
+    }
   }
 
   &__list {

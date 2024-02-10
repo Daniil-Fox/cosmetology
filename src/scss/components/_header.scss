@@ -9,9 +9,20 @@
     width: 286px;
     height: 80px;
 
+    @include big-desktop {
+      width: 250px;
+      height: 72px;
+    }
+
+    @include small-tablet {
+      width: unset;
+      height: 60px;
+    }
+
     img {
       width: 100%;
       height: 100%;
+      object-fit: contain;
     }
   }
 
@@ -28,6 +39,10 @@
     text-align: right;
     color: var(--text-color);
     position: relative;
+
+    @include tablet {
+      display: none;
+    }
 
     &::after {
       content: "";

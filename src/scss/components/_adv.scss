@@ -4,6 +4,11 @@
   padding: 10px;
   transform: translateY(-50%);
 
+  @include small-tablet {
+    transform: translateY(-50px);
+    margin: 0 20px;
+  }
+
   &__list {
     padding: 37px 30px;
     border: 1px solid #f0e9e3;
@@ -11,6 +16,21 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 30px 80px;
     justify-content: space-between;
+
+    @include tablet {
+      padding: 25px 15px;
+      gap: 24px 40px;
+    }
+
+    @include small-tablet {
+      grid-template-columns: 1fr;
+      gap: 15px;
+      padding: 10px;
+    }
+
+    @include mobile {
+      padding: 17px 24px 21px;
+    }
   }
 
   &__item {
@@ -22,6 +42,7 @@
       content: "";
       display: block;
       border-radius: 100%;
+      flex-shrink: 0;
       width: 7px;
       height: 7px;
       background-color: var(--accent-color);
@@ -30,5 +51,9 @@
     font-weight: 300;
     font-size: 18px;
     color: #212121;
+
+    @include mobile {
+      font-size: 15px;
+    }
   }
 }

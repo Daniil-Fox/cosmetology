@@ -129,6 +129,16 @@ a {
   @include hover {
     background-color: #e2af99;
   }
+
+  @include big-desktop {
+    padding: 15px;
+    font-size: 15px;
+    text-align: center;
+  }
+
+  @include mobile {
+    padding: 15px 27px;
+  }
 }
 
 .title2 {
@@ -137,6 +147,22 @@ a {
   font-weight: 400;
   font-size: 54px;
   color: var(--text-color);
+
+  @include big-desktop {
+    font-size: 46px;
+  }
+
+  @include tablet {
+    font-size: 40px;
+  }
+
+  @include small-tablet {
+    font-size: 34px;
+  }
+
+  @include mobile {
+    font-size: 32px;
+  }
 }
 
 .desc {
@@ -146,4 +172,9 @@ a {
   font-size: 17px;
   line-height: 176%;
   color: var(--text-color);
+
+  @include mobile {
+    font-size: 16px;
+    line-height: none;
+  }
 }

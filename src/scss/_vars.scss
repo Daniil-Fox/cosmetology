@@ -6,7 +6,23 @@
   --font3: "Caveat", sans-serif;
   --content-width: 1200px;
   --container-offset: 15px;
+
+  @include big-desktop {
+    --content-width: 850px;
+  }
+
+  @include small-tablet {
+    --content-width: 580px;
+  }
+
+  @include mobile {
+    --content-width: 100%;
+    --container-offset: 20px;
+  }
+
   --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+
+
 
   // colors
   --white-color: #ffffff;

@@ -6,18 +6,47 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @include small-tablet {
+      flex-direction: column;
+      gap: 23px;
+    }
   }
 
   &__left {
     display: flex;
     align-items: center;
     gap: 38px;
+
+    @include small-tablet {
+      flex-direction: column;
+      gap: 23px;
+    }
   }
 
   &__copy {
     font-weight: 300;
     font-size: 15px;
     color: #fff;
+
+    @include small-tablet {
+      text-align: center;
+    }
+  }
+
+  &__logo {
+    @include big-desktop {
+      height: 60px;
+    }
+
+    @include small-tablet {
+      height: 80px;
+    }
+
+    img {
+      height: 100%;
+      object-fit: contain;
+    }
   }
 
   &__tel {
@@ -26,6 +55,14 @@
     font-size: 28px;
     text-align: right;
     color: #fff;
+
+    @include big-desktop {
+      font-size: 22px;
+    }
+
+    @include small-tablet {
+      font-size: 22px;
+    }
 
     @include hover {
       text-decoration: underline;

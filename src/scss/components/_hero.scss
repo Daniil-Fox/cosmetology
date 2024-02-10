@@ -4,6 +4,24 @@
   background-color: #f1e7dc;
   border-bottom-left-radius: 300px;
 
+  @include big-desktop {
+    border-bottom-left-radius: 200px;
+  }
+
+  @include tablet {
+    border-bottom-left-radius: 100px;
+  }
+
+  @include tablet {
+    padding-top: 140px;
+  }
+
+  @include small-tablet {
+    padding-top: 120px;
+    padding-bottom: 0;
+    border-bottom-left-radius: 0;
+  }
+
   &__container {
     position: relative;
   }
@@ -11,8 +29,30 @@
   &__girl {
     position: absolute;
     right: 0;
-    bottom: -83px;
+    bottom: -86px;
     height: 646px;
+
+    @include big-desktop {
+      height: 546px;
+    }
+
+    @include tablet {
+      height: 500px;
+    }
+
+    @include small-tablet {
+      position: relative;
+      right: unset;
+      bottom: unset;
+      height: 350px;
+      margin-left: auto;
+      display: flex;
+      justify-content: center;
+    }
+
+    @include mobile {
+      height: 318px;
+    }
 
     img {
       height: 100%;
@@ -20,7 +60,13 @@
   }
 
   &__content {
+    position: relative;
+    z-index: 5;
     max-width: 650px;
+
+    @include tablet {
+      max-width: 500px;
+    }
   }
 
   &__subtitle {
@@ -34,6 +80,21 @@
     font-weight: 300;
     font-size: 24px;
     color: #fff;
+
+    @include big-desktop {
+      font-size: 22px;
+    }
+
+    @include tablet {
+      padding: 8px 28px;
+      margin-bottom: 28px;
+    }
+
+    @include mobile {
+      border-radius: 17px 21px 21px 0;
+      padding: 6px 21px;
+      font-size: 16px;
+    }
   }
 
   &__title {
@@ -43,6 +104,25 @@
     font-weight: 400;
     font-size: 66px;
     color: var(--text-color);
+
+    @include big-desktop {
+      margin-bottom: 58px;
+      font-size: 60px;
+    }
+
+    @include tablet {
+      margin-bottom: 40px;
+      font-size: 52px;
+    }
+
+    @include small-tablet {
+      font-size: 44px;
+      margin-bottom: 0;
+    }
+
+    @include mobile {
+      font-size: 40px;
+    }
   }
 
   &__desc {
@@ -52,12 +132,30 @@
     font-weight: 700;
     font-size: 32px;
     color: var(--text-color);
+
+    @include big-desktop {
+      font-size: 30px;
+    }
+
+    @include mobile {
+      font-size: 24px;
+      margin-bottom: 25px;
+    }
   }
 
   &__btn {
     display: inline-flex;
     align-items: center;
     gap: 42px;
+
+    @include big-desktop {
+      gap: 30px;
+    }
+
+    @include mobile {
+      width: 100%;
+      justify-content: center;
+    }
 
     img {
       display: block;

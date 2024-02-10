@@ -3,11 +3,39 @@
   padding-bottom: 80px;
   background-color: #f1f3fe;
   border-top-left-radius: 300px;
+  overflow: hidden;
+
+  @include big-desktop {
+    border-top-left-radius: 200px;
+  }
+
+  @include tablet {
+    padding: 80px 0;
+    border-top-left-radius: 100px;
+  }
+
+  @include small-tablet {
+    padding: 60px 0;
+    border-top-left-radius: 0;
+  }
 
   &__container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 70px;
+
+    @media (max-width: 1440px) {
+      align-items: center;
+    }
+
+    @include big-desktop {
+      gap: 30px;
+    }
+
+    @include small-tablet {
+      grid-template-columns: 1fr;
+      align-items: flex-start;
+    }
   }
 
   &__title {
@@ -19,17 +47,47 @@
     align-items: center;
     justify-content: space-between;
 
+    @include big-desktop {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 15px;
+    }
+
+    @include small-tablet {
+      flex-direction: row;
+      align-self: center;
+    }
+
+    @include mobile {
+      flex-direction: column;
+    }
+
     &:not(:last-of-type) {
       margin-bottom: 33px;
+
+      @include big-desktop {
+        margin-bottom: 15px;
+      }
     }
 
     &:last-of-type {
       margin-bottom: 50px;
+
+      @include big-desktop {
+        margin-bottom: 20px;
+      }
     }
   }
 
   &__block {
     display: block;
+    flex-shrink: 0;
+  }
+
+  &__btn {
+    @include mobile {
+      justify-content: flex-start;
+    }
   }
 
   &__name {
@@ -39,6 +97,11 @@
     font-size: 16px;
     text-transform: uppercase;
     color: var(--text-color);
+
+    @include mobile {
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
   }
 
   &__val {
@@ -47,11 +110,27 @@
     font-weight: 400;
     font-size: 28px;
     color: var(--text-color);
+
+    @include big-desktop {
+      font-size: 22px;
+    }
   }
 
   &__info {
     display: block;
     font-weight: 300;
     font-size: 15px;
+
+    @include big-desktop {
+      margin-top: 5px;
+    }
+  }
+
+  &__map {
+    height: 100%;
+
+    @include small-tablet {
+      height: 350px;
+    }
   }
 }

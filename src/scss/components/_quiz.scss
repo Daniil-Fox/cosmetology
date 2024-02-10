@@ -2,30 +2,49 @@
   position: relative;
   padding-top: 130px;
   padding-bottom: 130px;
+  overflow: hidden;
 
-  &::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    height: 73%;
-    width: 28%;
-    background-color: #0d2dd2;
-    border-top-left-radius: 300px;
+  @media (max-width: 850px) {
+    padding: 63px 0;
   }
 
-  &::before {
-    content: "";
+  &__slide {}
+
+  &__images {
     position: absolute;
-    z-index: 2;
-    right: 270px;
-    bottom: 85px;
-    width: 348px;
-    height: 300px;
-    background-image: url('./../img/dotted.svg');
-    background-position: center center;
-    background-size: contain;
-    background-repeat: no-repeat;
+    z-index: 4;
+    bottom: 0;
+    right: 100px;
+    height: 100%;
+    width: 600px;
+
+    @include tablet {
+      right: 0;
+
+    }
+
+    @media (max-width: 850px) {
+      display: none;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    right: 0;
+    z-index: 4;
+    // bottom: -130px;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 
   &__title {
@@ -40,16 +59,83 @@
     font-weight: 300;
     font-size: 18px;
     color: var(--text-color);
+
+    @media (max-width: 850px) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__wrapper {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+
+    &::after {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      bottom: 1px;
+      right: 0;
+      height: 73%;
+      width: 28%;
+      background-color: #0d2dd2;
+      border-top-left-radius: 300px;
+
+      @include big-desktop {
+        border-top-left-radius: 200px;
+      }
+
+      @media (max-width: 850px) {
+        display: none;
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: 2;
+      right: 14%;
+      bottom: 85px;
+      width: 348px;
+      height: 300px;
+      background-image: url('./../img/dotted.svg');
+      background-position: center center;
+      background-size: contain;
+      background-repeat: no-repeat;
+
+      @include tablet {
+        right: 0;
+      }
+
+      @media (max-width: 850px) {
+        display: none;
+      }
+    }
   }
 
   &__bg {
     position: absolute;
     inset: 0;
-    z-index: -1;
     height: 100%;
     width: 88%;
     background-color: #f1e7dc;
     border-top-right-radius: 300px;
+    overflow: hidden;
+
+    @include big-desktop {
+      border-top-right-radius: 200px;
+    }
+
+    @include tablet {
+      width: 100%;
+      border-top-right-radius: 100px;
+    }
+
+    @media (max-width: 850px) {
+      border-top-right-radius: 0;
+    }
   }
 
   &__que {
@@ -59,11 +145,25 @@
     font-weight: 400;
     font-size: 36px;
     color: var(--text-color);
+
+    @include tablet {
+      font-size: 30px;
+    }
+
+    @include small-tablet {
+      font-size: 24px;
+    }
   }
 
   &__vars {
     display: flex;
+    flex-wrap: wrap;
     gap: 19px;
+
+    @include small-tablet {
+      flex-direction: column;
+      gap: 6px;
+    }
   }
 
   &__radio {
@@ -90,13 +190,26 @@
     color: #154b8b;
     flex: 1;
     max-width: 186px;
-    height: 107px;
+    min-height: 107px;
     background-color: var(--white-color);
 
     transition: background-color .3s ease-out, color .3s ease-out;
+
+    @include small-tablet {
+      max-width: unset;
+      min-height: unset;
+      padding: 13px;
+    }
   }
 
   &__slider {
+
+    .swiper-wrapper {}
+
+    .swiper-slide {
+      position: static;
+    }
+
     .swiper-pagination {
       position: relative;
       bottom: unset;
@@ -115,7 +228,7 @@
         margin: 0 12px !important;
 
         &-active {
-          outline: 1px solid #c39683;
+          outline: 1px solid #c39683 !important;
           outline-offset: 7px;
         }
       }

@@ -3,6 +3,14 @@
     display: flex;
     align-items: center;
     gap: 30px;
+
+    @include big-desktop {
+      gap: 15px;
+    }
+
+    @include tablet {
+      display: none;
+    }
   }
 
   &__item {

@@ -140,8 +140,11 @@
       <article class="lifting__item lift">
         <div class="lift__dot"></div>
         <div class="lift__dot"></div>
-        <div class="lift__img">
-          <img src="./img/lift/01.webp" alt="">
+        <div class="lift__img-wrap">
+          <div class="lift__img">
+            <img src="./img/lift/01.webp" alt="">
+          </div>
+          <h4 class="lift__title lift__title--mob">Лицо</h4>
         </div>
         <div class="lift__char">
           <h4 class="lift__title">Лицо</h4>
@@ -160,8 +163,11 @@
       <article class="lifting__item lift">
         <div class="lift__dot"></div>
         <div class="lift__dot"></div>
-        <div class="lift__img">
-          <img src="./img/lift/02.webp" alt="">
+        <div class="lift__img-wrap">
+          <div class="lift__img">
+            <img src="./img/lift/02.webp" alt="">
+          </div>
+          <h4 class="lift__title lift__title--mob">Тело</h4>
         </div>
         <div class="lift__char">
           <h4 class="lift__title">Тело</h4>
@@ -179,8 +185,11 @@
       <article class="lifting__item lift">
         <div class="lift__dot"></div>
         <div class="lift__dot"></div>
-        <div class="lift__img">
-          <img src="./img/lift/03.webp" alt="">
+        <div class="lift__img-wrap">
+          <div class="lift__img">
+            <img src="./img/lift/03.webp" alt="">
+          </div>
+          <h4 class="lift__title lift__title--mob">Кожа</h4>
         </div>
         <div class="lift__char">
           <h4 class="lift__title">Кожа</h4>
@@ -293,9 +302,74 @@
       </div>
     </div>
   </div>
+  <div class="compare__control compare__control--mob">
+    <button class="compare__btn compare__btn-prev btn-reset">
+      <svg width="52" height="51" viewBox="0 0 52 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g clip-path="url(#clip0_11369_717)">
+          <path
+            d="M3.82343 24.7028L51.5 24.7028L51.5 26.2968L3.82343 26.2968L20.18 40.6594L19.1277 41.858L0.500001 25.4998L19.1277 9.1416L20.18 10.3402L3.82343 24.7028Z"
+            fill="#212121" />
+        </g>
+        <defs>
+          <clipPath id="clip0_11369_717">
+            <rect width="51" height="51" fill="white" transform="matrix(4.37114e-08 1 1 -4.37114e-08 0.5 0)" />
+          </clipPath>
+        </defs>
+      </svg>
+    </button>
+    <button class="compare__btn compare__btn-next btn-reset">
+      <svg width="51" height="51" viewBox="0 0 51 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g clip-path="url(#clip0_11369_714)">
+          <path
+            d="M47.6766 24.7028L-6.80204e-07 24.7028L-7.49875e-07 26.2968L47.6766 26.2968L31.32 40.6594L32.3723 41.858L51 25.4998L32.3723 9.1416L31.32 10.3402L47.6766 24.7028Z"
+            fill="#212121" />
+        </g>
+        <defs>
+          <clipPath id="clip0_11369_714">
+            <rect width="51" height="51" fill="white" transform="translate(51) rotate(90)" />
+          </clipPath>
+        </defs>
+      </svg>
+    </button>
+  </div>
 </section>
       <section class="quiz">
-  <div class="quiz__bg"></div>
+  <div class="quiz__wrapper">
+    <div class="quiz__bg">
+      <div class="quiz__images swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="quiz__image">
+              <picture>
+                <source srcset="./img/body/01-2x.webp" media="(min-width: 1900px)">
+                <source srcset="./img/body/01.webp">
+                <img src="./img/body/01.png" srcset="./img/body/01-2x.png 2x" alt="">
+              </picture>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="quiz__image">
+              <picture>
+                <source srcset="./img/body/02-2x.webp" media="(min-width: 1900px)">
+                <source srcset="./img/body/02.webp">
+                <img src="./img/body/02.png" srcset="./img/body/01-2x.png 2x" alt="">
+              </picture>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="quiz__image">
+              <picture>
+                <source srcset="./img/body/03-2x.webp" media="(min-width: 1900px)">
+                <source srcset="./img/body/03.webp">
+                <img src="./img/body/03.png" srcset="./img/body/01-2x.png 2x" alt="">
+              </picture>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
   <div class="container">
     <h2 class="title2 quiz__title">Подберите процедуру</h2>
     <p class="quiz__desc">
@@ -303,7 +377,7 @@
     </p>
 
     <form action="post" class="quiz__form">
-      <div class="quiz__slider swiper">
+      <div class="quiz__slider swiper swiper-no-swiping" effect="fade">
         <div class="swiper-pagination"></div>
         <div class="swiper-wrapper">
           <div class="swiper-slide">
@@ -317,20 +391,70 @@
                 <input id="zone" class="quiz__radio" type="radio" name="area" value="Интимные зоны">
                 <label for="zone" class="quiz__label">Интимные зоны</label>
               </div>
+
             </div>
           </div>
           <div class="swiper-slide">
             <div class="quiz__slide">
-              <h4 class="quiz__que">Какая область нуждается в коррекции?</h4>
+              <h4 class="quiz__que">Вопрос 2?</h4>
               <div class="quiz__vars">
-                <input id="other1" class="quiz__radio" type="radio" name="area" value="Лицо и шея">
-                <label for="other1" class="quiz__label">Лицо и шея</label>
-                <input id="other2" class="quiz__radio" type="radio" name="area" value="Тело">
-                <label for="other2" class="quiz__label">Тело</label>
-                <input id="other3" class="quiz__radio" type="radio" name="area" value="Интимные зоны">
-                <label for="other3" class="quiz__label">Интимные зоны</label>
+                <input id="other1" class="quiz__radio" type="radio" name="q2" value="Вопрос2 Ответ1">
+                <label for="other1" class="quiz__label">Вопрос2 Ответ1</label>
+                <input id="other2" class="quiz__radio" type="radio" name="q2" value="Вопрос2 Ответ2">
+                <label for="other2" class="quiz__label">Вопрос2 Ответ2</label>
+                <input id="other3" class="quiz__radio" type="radio" name="q2" value="Вопрос2 Ответ3">
+                <label for="other3" class="quiz__label">Вопрос2 Ответ3</label>
               </div>
             </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="quiz__slide">
+              <h4 class="quiz__que">Вопрос 3?</h4>
+              <div class="quiz__vars">
+                <input id="other4" class="quiz__radio" type="radio" name="q3" value="Вопрос3 Ответ1">
+                <label for="other4" class="quiz__label">Вопрос3 Ответ1</label>
+                <input id="other5" class="quiz__radio" type="radio" name="q3" value="Вопрос3 Ответ2">
+                <label for="other5" class="quiz__label">Вопрос3 Ответ2</label>
+                <input id="other6" class="quiz__radio" type="radio" name="q3" value="Вопрос3 Ответ3">
+                <label for="other6" class="quiz__label">Вопрос3 Ответ3</label>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="modal" data-sec-modal>
+        <div class="modal__window">
+          <div class="modal__content">
+            <button class="btn-reset modal__close" data-modal-close>
+              <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_11457_1075)">
+                  <path
+                    d="M6.50777 5.509L10.7909 1.22569C11.0697 0.94708 11.0697 0.496604 10.7909 0.217992C10.5123 -0.0606197 10.0619 -0.0606197 9.78325 0.217992L5.49994 4.5013L1.21676 0.217992C0.938014 -0.0606197 0.487668 -0.0606197 0.209057 0.217992C-0.0696855 0.496604 -0.0696855 0.94708 0.209057 1.22569L4.49224 5.509L0.209057 9.79232C-0.0696855 10.0709 -0.0696855 10.5214 0.209057 10.8C0.347906 10.939 0.530471 11.0088 0.712907 11.0088C0.895342 11.0088 1.07778 10.939 1.21676 10.8L5.49994 6.5167L9.78325 10.8C9.92223 10.939 10.1047 11.0088 10.2871 11.0088C10.4695 11.0088 10.652 10.939 10.7909 10.8C11.0697 10.5214 11.0697 10.0709 10.7909 9.79232L6.50777 5.509Z"
+                    fill="#C39683" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_11457_1075">
+                    <rect width="11" height="11" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </button>
+            <h2 class="title2 modal__title">Консультация</h2>
+            <p class="desc modal__desc">Оставьте свои контактные данные и мы свяжемся с вами</p>
+            <div class="form">
+              <label class="form__label">
+                <span class="form__name">фио</span>
+                <input type="text" class="form__input form-name">
+              </label>
+              <label class="form__label">
+                <span class="form__name">номер телефона</span>
+                <input type="tel" class="form__input form-tel">
+              </label>
+              <button type="submit" class="btn-reset hero__btn btn form__btn">Отправить заявку<img
+                  src="./img/arrow-circle.svg" alt="&RightArrow;"></button>
+            </div>
+            <p class="form__privacy">Оставляя заявку я соглашаюсь с <a href="#">Политикой конфиденциальности</a></p>
           </div>
         </div>
       </div>
@@ -387,13 +511,7 @@
 </section>
       <section class="app">
   <div class="app__bg"></div>
-  <div class="app__img">
-    <picture>
-      <source srcset="./img/app-2x.webp" media="(min-width: 1440px)">
-      <source srcset="./img/app.webp">
-      <img src="./img/app.png" srcset="./img/app-2x.png" alt="">
-    </picture>
-  </div>
+
   <div class="container app__container">
     <div class="app__content">
       <h2 class="title2 app__title">Фото до и после<br>
@@ -422,6 +540,13 @@
       <button class="btn-reset btn hero__btn app__btn" data-modal-btn>Получить скидку 10% <img
           src="./img/arrow-circle.svg" alt="&RightArrow;"></button>
     </div>
+  </div>
+  <div class="app__img">
+    <picture>
+      <source srcset="./img/app-2x.webp" media="(min-width: 1440px)">
+      <source srcset="./img/app.webp">
+      <img src="./img/app.png" srcset="./img/app-2x.png" alt="">
+    </picture>
   </div>
 </section>
       <section class="cases">
@@ -562,6 +687,36 @@
           </div>
         </div>
       </div>
+      <div class="cases__control-mob">
+        <button class="btn-reset cases__btn cases__btn-prev compare__btn">
+          <svg width="52" height="51" viewBox="0 0 52 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_11369_717)">
+              <path
+                d="M3.82343 24.7028L51.5 24.7028L51.5 26.2968L3.82343 26.2968L20.18 40.6594L19.1277 41.858L0.500001 25.4998L19.1277 9.1416L20.18 10.3402L3.82343 24.7028Z"
+                fill="#212121" />
+            </g>
+            <defs>
+              <clipPath id="clip0_11369_717">
+                <rect width="51" height="51" fill="white" transform="matrix(4.37114e-08 1 1 -4.37114e-08 0.5 0)" />
+              </clipPath>
+            </defs>
+          </svg>
+        </button>
+        <button class="btn-reset cases__btn cases__btn-next compare__btn">
+          <svg width="51" height="51" viewBox="0 0 51 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_11369_714)">
+              <path
+                d="M47.6766 24.7028L-6.80204e-07 24.7028L-7.49875e-07 26.2968L47.6766 26.2968L31.32 40.6594L32.3723 41.858L51 25.4998L32.3723 9.1416L31.32 10.3402L47.6766 24.7028Z"
+                fill="#212121" />
+            </g>
+            <defs>
+              <clipPath id="clip0_11369_714">
+                <rect width="51" height="51" fill="white" transform="translate(51) rotate(90)" />
+              </clipPath>
+            </defs>
+          </svg>
+        </button>
+      </div>
     </div>
   </div>
 </section>
@@ -577,7 +732,7 @@
         клиника».</p>
       <p class="desc reward__desc">ТОП-10 частных клиник Ульяновской области по мнению пациентов на 1 ноября 2023 года.
       </p>
-      <button class="btn-reset hero__btn reward__brn btn" data-modal-btn>Получить консультацию<img
+      <button class="btn-reset hero__btn reward__btn btn" data-modal-btn>Получить консультацию<img
           src="./img/arrow-circle.svg" alt=""></button>
     </div>
     <div class="reward__image">
@@ -587,6 +742,8 @@
         <img src="./img/reward.jpg" srcset="./img/reward-2x.jpg 2x" alt="">
       </picture>
     </div>
+    <button class="btn-reset hero__btn reward__btn-mob btn" data-modal-btn>Получить консультацию<img
+        src="./img/arrow-circle.svg" alt=""></button>
   </div>
 </section>
       <section class="price">
@@ -882,7 +1039,7 @@
     <div class="contacts__map" id="map"></div>
   </div>
 </section>
-      <div class="modal">
+      <div class="modal" data-modal>
   <div class="modal__window">
     <div class="modal__content">
       <button class="btn-reset modal__close" data-modal-close>
@@ -904,11 +1061,11 @@
       <form action="post" class="form">
         <label class="form__label">
           <span class="form__name">фио</span>
-          <input type="text" class="form__input">
+          <input type="text" class="form__input form-name">
         </label>
         <label class="form__label">
           <span class="form__name">номер телефона</span>
-          <input type="tel" class="form__input">
+          <input type="tel" class="form__input form-tel">
         </label>
         <button type="submit" class="btn-reset hero__btn btn form__btn">Отправить заявку<img
             src="./img/arrow-circle.svg" alt="&RightArrow;"></button>
@@ -921,7 +1078,7 @@
     <footer class="footer">
   <div class="container footer__container">
     <div class="footer__left">
-      <a href="#" class="logo">
+      <a href="#" class="footer__logo">
         <img src="./img/logo.svg" alt="">
       </a>
       <small class="footer__copy">© 2013-2023 «Многопрофильная Семейная Клиника»</small>

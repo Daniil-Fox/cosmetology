@@ -24,12 +24,21 @@
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
+
+    @media (max-width: 605px) {
+      width: 100%;
+      margin: 20px;
+    }
   }
 
   &__content {
     border: 1px solid #ebdcd0;
     padding: 60px;
     position: relative;
+
+    @media (max-width: 605px) {
+      padding: 20px;
+    }
   }
 
   &__close {
