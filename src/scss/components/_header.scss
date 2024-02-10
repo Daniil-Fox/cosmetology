@@ -3,11 +3,36 @@
   top: 30px;
   left: 0;
   width: 100%;
-  z-index: 99;
+  z-index: 100;
+
+  &.active {
+    .header__logo {
+      opacity: 0;
+      z-index: -1;
+    }
+  }
+
+  &__burger {
+    display: none;
+    position: relative;
+    z-index: 12;
+
+    @include tablet {
+      display: block;
+    }
+
+    width: 47px;
+    height: 47px;
+    border-radius: 100%;
+    overflow: hidden;
+    box-shadow: 0 4px 13px 0 rgba(30, 35, 66, 0.11);
+    background: #fff;
+  }
 
   &__logo {
     width: 286px;
     height: 80px;
+    transition: opacity .3s ease-out, z-index .3s ease-out;
 
     @include big-desktop {
       width: 250px;

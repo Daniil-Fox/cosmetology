@@ -16624,6 +16624,16 @@ modal.addEventListener('click', e => {
 modalWindow.addEventListener('click', e => {
   e.stopPropagation();
 });
+const burger = document.querySelector('.header__burger');
+const menu = document.querySelector('.menu');
+const header = document.querySelector('header');
+burger.addEventListener('click', e => {
+  e.stopPropagation();
+  e.preventDefault();
+  const isActive = menu.classList.toggle('active');
+  header.classList.toggle('active');
+  isActive ? document.body.style.overflow = 'hidden' : document.body.style.overflow = null;
+});
 })();
 
 /******/ })()
