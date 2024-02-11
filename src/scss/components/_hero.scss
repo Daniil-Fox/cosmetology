@@ -3,6 +3,7 @@
   padding-bottom: 166px;
   background-color: #f1e7dc;
   border-bottom-left-radius: 300px;
+  overflow: hidden;
 
   @include big-desktop {
     border-bottom-left-radius: 200px;
@@ -28,9 +29,29 @@
 
   &__girl {
     position: absolute;
+    z-index: 1;
     right: 0;
     bottom: -86px;
     height: 646px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      right: -76px;
+      bottom: 124px;
+      width: 80%;
+      height: 90%;
+      background-image: url('./../img/dotted-gray.svg');
+      background-position: center center;
+      background-size: content;
+      background-repeat: no-repeat;
+
+      @include small-tablet {
+        bottom: 40px;
+        right: -20px;
+      }
+    }
 
     @include big-desktop {
       height: 546px;
@@ -52,6 +73,7 @@
 
     @include mobile {
       height: 318px;
+      transform: translateX(-20%);
     }
 
     img {

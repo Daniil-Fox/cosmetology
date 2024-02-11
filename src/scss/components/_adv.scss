@@ -3,9 +3,15 @@
   background: #fff;
   padding: 10px;
   transform: translateY(-50%);
+  position: relative;
+  z-index: 3;
 
   @include small-tablet {
     transform: translateY(-50px);
+    margin: 0 auto;
+  }
+
+  @include mobile {
     margin: 0 20px;
   }
 

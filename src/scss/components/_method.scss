@@ -1,4 +1,6 @@
 .method {
+  position: relative;
+
   &__container {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -20,6 +22,29 @@
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
+    position: relative;
+
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+      width: 348px;
+      height: 300px;
+      background-image: url('./../img/dotted-blue.svg');
+      background-position: center center;
+      background-size: cover;
+      background-repeat: no-repeat;
+
+      @include small-tablet {
+        height: 250px;
+        background-size: 290px;
+        transform: translate(-30%, -50%);
+      }
+    }
 
     @include big-desktop {
       grid-column: 5 span;
