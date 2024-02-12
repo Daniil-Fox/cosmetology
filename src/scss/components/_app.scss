@@ -120,6 +120,31 @@
   align-items: flex-start;
   gap: 13px;
 
+  &:nth-child(1) {
+    @include small-tablet {
+      order: 1;
+    }
+  }
+
+  &:nth-child(2) {
+    @include small-tablet {
+      order: 3;
+
+    }
+  }
+
+  &:nth-child(3) {
+    @include small-tablet {
+      order: 2;
+    }
+  }
+
+  &:nth-child(4) {
+    @include small-tablet {
+      order: 4;
+    }
+  }
+
   @include small-tablet {
     align-items: center;
   }

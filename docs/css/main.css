@@ -1894,6 +1894,34 @@ a {
   gap: 13px;
 }
 @media (max-width: 768px) {
+  .app-item:nth-child(1) {
+    -webkit-box-ordinal-group: 2;
+    -ms-flex-order: 1;
+    order: 1;
+  }
+}
+@media (max-width: 768px) {
+  .app-item:nth-child(2) {
+    -webkit-box-ordinal-group: 4;
+    -ms-flex-order: 3;
+    order: 3;
+  }
+}
+@media (max-width: 768px) {
+  .app-item:nth-child(3) {
+    -webkit-box-ordinal-group: 3;
+    -ms-flex-order: 2;
+    order: 2;
+  }
+}
+@media (max-width: 768px) {
+  .app-item:nth-child(4) {
+    -webkit-box-ordinal-group: 5;
+    -ms-flex-order: 4;
+    order: 4;
+  }
+}
+@media (max-width: 768px) {
   .app-item {
     -webkit-box-align: center;
     -ms-flex-align: center;
