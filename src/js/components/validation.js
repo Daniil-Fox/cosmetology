@@ -60,7 +60,6 @@ const afterForm1 = () => {
 
 const afterForm2 = () => {
   quizSlider.slideTo(0)
-  console.log('asdasd');
   quizImagesSlider.slideTo(1)
 };
 

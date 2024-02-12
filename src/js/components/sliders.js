@@ -57,38 +57,24 @@ const casesSlider = new Swiper(".cases__slider", {
 });
 
 const quizInputs = document.querySelectorAll('.quiz__label')
+const quizPagination = document.querySelector('.quiz-pagination')
 quizInputs.forEach(el => {
   const length = document.querySelector('.quiz__slider').querySelectorAll('.swiper-slide').length
 
-
+  const title = document.querySelector('.quiz__title')
+  const desc = document.querySelector('.quiz__desc')
   el.addEventListener('click', () => {
-    if(quizImagesSlider.activeIndex != length - 1){
+    if(quizImagesSlider.activeIndex != length - 2){
       setTimeout(() => {
         quizImagesSlider.slideNext()
         quizSlider.slideNext()
       }, 300)
     } else {
-      const modal = document.querySelector('[data-sec-modal]')
-
-      const modalWindow = modal.querySelector('.modal__window')
-      const closeBtn = modal.querySelector('.modal__close')
-      modal.classList.add('active')
-      document.body.style.overflow = 'hidden'
-      closeBtn.addEventListener('click', e => {
-        e.preventDefault()
-
-        modal.classList.remove('active');
-        document.body.style.overflow = null;
-      })
-      modal.addEventListener('click', e => {
-        e.stopPropagation()
-        modal.classList.remove('active');
-        document.body.style.overflow = null;
-      })
-      modalWindow.addEventListener('click', e => {
-        e.stopPropagation()
-      })
-
+      quizImagesSlider.slideNext()
+      quizSlider.slideNext()
+      // quizPagination.style.display = 'none'
+      title.textContent = 'Ваша персональная скидка 10%'
+      desc.textContent = 'Отправьте заявку и мы свяжемся с вами в ближайшее время'
     }
   })
 })

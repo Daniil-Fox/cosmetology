@@ -1302,10 +1302,15 @@ a {
   padding-bottom: 130px;
   overflow: hidden;
 }
-@media (max-width: 850px) {
+@media (max-width: 1024px) {
   .quiz {
     padding: 63px 0;
   }
+}
+.quiz__slider .swiper-wrapper {
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
 }
 .quiz__images {
   position: absolute;
@@ -1317,21 +1322,18 @@ a {
 }
 @media (max-width: 1024px) {
   .quiz__images {
-    right: 0;
-  }
-}
-@media (max-width: 850px) {
-  .quiz__images {
     display: none;
   }
 }
 .quiz__image {
   position: absolute;
-  right: 0;
+  right: 0px;
   z-index: 4;
   bottom: 0;
   width: 100%;
   height: 100%;
+}
+.quiz__image--contain {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1342,12 +1344,17 @@ a {
   -webkit-box-pack: end;
   -ms-flex-pack: end;
   justify-content: flex-end;
+  right: -100px;
+}
+.quiz__image--contain img {
+  -o-object-fit: contain;
+  object-fit: contain;
+  height: 100%;
+  width: 100%;
+  max-width: 600px;
 }
 .quiz__image img {
-  width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-  object-fit: cover;
 }
 .quiz__title {
   margin-bottom: 20px;
@@ -1389,7 +1396,7 @@ a {
     border-top-left-radius: 200px;
   }
 }
-@media (max-width: 850px) {
+@media (max-width: 1024px) {
   .quiz__wrapper::after {
     display: none;
   }
@@ -1408,11 +1415,6 @@ a {
   background-repeat: no-repeat;
 }
 @media (max-width: 1024px) {
-  .quiz__wrapper::before {
-    right: 0;
-  }
-}
-@media (max-width: 850px) {
   .quiz__wrapper::before {
     display: none;
   }
@@ -1434,11 +1436,6 @@ a {
 @media (max-width: 1024px) {
   .quiz__bg {
     width: 100%;
-    border-top-right-radius: 100px;
-  }
-}
-@media (max-width: 850px) {
-  .quiz__bg {
     border-top-right-radius: 0;
   }
 }
@@ -1468,7 +1465,7 @@ a {
   flex-wrap: wrap;
   gap: 19px;
 }
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .quiz__vars {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1510,7 +1507,7 @@ a {
   -webkit-transition: background-color 0.3s ease-out, color 0.3s ease-out;
   transition: background-color 0.3s ease-out, color 0.3s ease-out;
 }
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .quiz__label {
     max-width: unset;
     min-height: unset;
@@ -2870,6 +2867,14 @@ a {
   margin-bottom: 20px;
 }
 
+.form--quiz {
+  max-width: 30%;
+}
+@media (max-width: 1024px) {
+  .form--quiz {
+    max-width: 100%;
+  }
+}
 .form__label {
   display: block;
 }
