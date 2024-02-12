@@ -55,6 +55,11 @@
       background-position: center center;
       background-size: cover;
       background-repeat: no-repeat;
+      display: none;
+
+      @include small-tablet {
+        display: block;
+      }
     }
 
     @include tablet {
