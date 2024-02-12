@@ -294,8 +294,10 @@ a {
   left: 0;
   width: 100%;
   z-index: 100;
+  -webkit-transition: opacity 0.3s ease-out, z-index 0.3s ease-out;
+  transition: opacity 0.3s ease-out, z-index 0.3s ease-out;
 }
-.header.active .header__logo {
+.header.active {
   opacity: 0;
   z-index: -1;
 }
@@ -315,6 +317,13 @@ a {
   .header__burger {
     display: block;
   }
+}
+.header__burger--mob {
+  display: block !important;
+  position: absolute;
+  top: 30px;
+  right: 20px;
+  z-index: 50;
 }
 .header__logo {
   width: 286px;

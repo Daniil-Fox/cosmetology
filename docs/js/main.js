@@ -16624,15 +16624,17 @@ modal.addEventListener('click', e => {
 modalWindow.addEventListener('click', e => {
   e.stopPropagation();
 });
-const burger = document.querySelector('.header__burger');
+const burger = document.querySelectorAll('.header__burger');
 const menu = document.querySelector('.menu');
 const header = document.querySelector('header');
 const menuItems = menu.querySelectorAll('.menu__item');
-burger.addEventListener('click', e => {
-  e.stopPropagation();
-  e.preventDefault();
-  menu.classList.toggle('active');
-  header.classList.toggle('active');
+burger.forEach(btn => {
+  btn.addEventListener('click', e => {
+    e.stopPropagation();
+    e.preventDefault();
+    menu.classList.toggle('active');
+    header.classList.toggle('active');
+  });
 });
 menuItems.forEach(btn => {
   btn.addEventListener('click', () => {
